@@ -1,3 +1,48 @@
 ﻿<div class="col-md-12">
     <h1 ng-bind="title"></h1>
 </div>
+<div class="col-md-12">
+    <h3>Add Note</h3>
+    <div class="col-md-3">
+        <form ng-submit="addNote()">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Title" ng-model="newNote.title"/>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Description" ng-model="newNote.description"/>
+            </div>
+            <button type="submit" class="btn btn-success">Add</button>
+        </form>
+
+    </div>
+
+</div>
+
+<div class="col-md-12">
+
+    
+    <div class="col-md-3" todo>
+       <h3>Todo Notes</h3> 
+        <draggable id="note.id" title="note.title" description="note.description" ng-repeat="note in data.notes track by $index"></draggable>
+        
+    </div>
+
+
+
+
+    <div class="col-md-3 items">
+        <h3>Todo</h3>
+        <droppable id="1"></droppable>
+    </div>
+    <div class="col-md-3 items">
+        <h3>WIP</h3>
+        <droppable id="2"></droppable>
+    </div>
+    <div class="col-md-3 items">
+        <h3>Done</h3>
+        <droppable id="3"></droppable>
+    </div>
+
+
+
+</div>
